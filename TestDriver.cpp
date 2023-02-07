@@ -6,7 +6,7 @@
 #include "UnsortedList.h"
 
 using namespace std;
-void PrintList(ofstream& outFile, UnsortedList& list);
+void PrintList(ofstream& outFile, UnsortedList<int>& list);
 
 int main()
 {
@@ -19,7 +19,7 @@ int main()
 
 	int number;
 	int item;
-	UnsortedList list;
+	UnsortedList<float> list;
 
 	bool found;
 
@@ -111,7 +111,7 @@ int main()
 };
 
 
-void PrintList(ofstream& dataFile, UnsortedList& list)
+void PrintList(ofstream& dataFile, UnsortedList<int>& list)
 // Pre:  list has been initialized.      
 //       dataFile is open for writing.   
 // Post: Each component in list has been written to dataFile.
@@ -121,7 +121,7 @@ void PrintList(ofstream& dataFile, UnsortedList& list)
 	int item;
 	dataFile << "PrintList" << endl;
 	cout << "PrintList: ";
-	list.ResetIterator();	// Sets currentPos = -1
+	list.ResetIterator();	// Sets currentPos = 0
 	length = list.GetLength();
 	if (length == 0)
 		dataFile << "List is empty.";
